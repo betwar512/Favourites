@@ -57,10 +57,15 @@
     myItem.urlAddress=@"www.google.com";
     myItem.imageUrl=@" 1image";
     
+        [self.myArray addObject:myItem];
+    
+    
     myItem=[[favList alloc]init];
     myItem.name=@"yahoo";
     myItem.urlAddress=@"yahoo.com";
     myItem.imageUrl=@"2image";
+
+        [self.myArray addObject:myItem];
     
     myItem=[[favList alloc]init];
     myItem.name=@"ign";
@@ -72,6 +77,19 @@
     BOOL success=[NSKeyedArchiver archiveRootObject:self.myArray toFile:fileName];
     
     XCTAssertTrue(success, @"could not save to file '%@' ",fileName);
+    
+}
+
+-(void) testLoad
+{
+    NSString* fileName=[self fileName];
+    [self testSave];
+    
+    NSMutableArray *loadMyArray=[[NSKeyedUnarchiver unarchiveObjectWithFile:fileName] mutableCopy];
+    XCTAssertTrue([loadMyArray isKindOfClass:[NSMutableArray class]], @"expected Array");
+                   
+    XCTAssertTrue(loadMyArray.count== 3, @"expected 3");
+
     
 }
 

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface favListViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIWebView *myWeb;
+@property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 
 @end

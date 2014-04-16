@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface favListDetailViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *nameFav;
+@property (weak, nonatomic) IBOutlet UITextField *webAddress;
+@property (weak, nonatomic) IBOutlet UITextField *imageUrl;
+@property (weak, nonatomic) IBOutlet UIImageView *myImageView;
 
 @end

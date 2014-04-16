@@ -25,6 +25,8 @@
 		2025084318FE9D940094701E /* favListMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2025084118FE9D940094701E /* favListMasterViewController.m */; };
 		2025084618FE9DAD0094701E /* favListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2025084518FE9DAD0094701E /* favListDetailViewController.m */; };
 		2025084718FE9DAD0094701E /* favListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2025084518FE9DAD0094701E /* favListDetailViewController.m */; };
+		2025084E18FEA5D00094701E /* favList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2025084D18FEA5D00094701E /* favList.m */; };
+		2025084F18FEA5D00094701E /* favList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2025084D18FEA5D00094701E /* favList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		2025084118FE9D940094701E /* favListMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = favListMasterViewController.m; sourceTree = "<group>"; };
 		2025084418FE9DAD0094701E /* favListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = favListDetailViewController.h; sourceTree = "<group>"; };
 		2025084518FE9DAD0094701E /* favListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = favListDetailViewController.m; sourceTree = "<group>"; };
+		2025084C18FEA5D00094701E /* favList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = favList.h; sourceTree = "<group>"; };
+		2025084D18FEA5D00094701E /* favList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = favList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,8 @@
 				2025081B18FE9D3D0094701E /* favListAppDelegate.m */,
 				2025081D18FE9D3D0094701E /* Main.storyboard */,
 				2025084018FE9D940094701E /* favListMasterViewController.h */,
+				2025084C18FEA5D00094701E /* favList.h */,
+				2025084D18FEA5D00094701E /* favList.m */,
 				2025084118FE9D940094701E /* favListMasterViewController.m */,
 				2025084418FE9DAD0094701E /* favListDetailViewController.h */,
 				2025084518FE9DAD0094701E /* favListDetailViewController.m */,
@@ -265,6 +271,7 @@
 				2025084218FE9D940094701E /* favListMasterViewController.m in Sources */,
 				2025081C18FE9D3D0094701E /* favListAppDelegate.m in Sources */,
 				2025082218FE9D3D0094701E /* favListViewController.m in Sources */,
+				2025084E18FEA5D00094701E /* favList.m in Sources */,
 				2025084618FE9DAD0094701E /* favListDetailViewController.m in Sources */,
 				2025081818FE9D3D0094701E /* main.m in Sources */,
 			);
@@ -275,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2025084318FE9D940094701E /* favListMasterViewController.m in Sources */,
+				2025084F18FEA5D00094701E /* favList.m in Sources */,
 				2025083718FE9D3D0094701E /* FavouritesTests.m in Sources */,
 				2025084718FE9DAD0094701E /* favListDetailViewController.m in Sources */,
 			);

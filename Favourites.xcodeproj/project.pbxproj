@@ -21,6 +21,10 @@
 		2025082D18FE9D3D0094701E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2025080F18FE9D3D0094701E /* UIKit.framework */; };
 		2025083518FE9D3D0094701E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2025083318FE9D3D0094701E /* InfoPlist.strings */; };
 		2025083718FE9D3D0094701E /* FavouritesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2025083618FE9D3D0094701E /* FavouritesTests.m */; };
+		2025084218FE9D940094701E /* favListMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2025084118FE9D940094701E /* favListMasterViewController.m */; };
+		2025084318FE9D940094701E /* favListMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2025084118FE9D940094701E /* favListMasterViewController.m */; };
+		2025084618FE9DAD0094701E /* favListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2025084518FE9DAD0094701E /* favListDetailViewController.m */; };
+		2025084718FE9DAD0094701E /* favListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2025084518FE9DAD0094701E /* favListDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		2025083218FE9D3D0094701E /* FavouritesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FavouritesTests-Info.plist"; sourceTree = "<group>"; };
 		2025083418FE9D3D0094701E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2025083618FE9D3D0094701E /* FavouritesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavouritesTests.m; sourceTree = "<group>"; };
+		2025084018FE9D940094701E /* favListMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = favListMasterViewController.h; sourceTree = "<group>"; };
+		2025084118FE9D940094701E /* favListMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = favListMasterViewController.m; sourceTree = "<group>"; };
+		2025084418FE9DAD0094701E /* favListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = favListDetailViewController.h; sourceTree = "<group>"; };
+		2025084518FE9DAD0094701E /* favListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = favListDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,10 @@
 				2025081A18FE9D3D0094701E /* favListAppDelegate.h */,
 				2025081B18FE9D3D0094701E /* favListAppDelegate.m */,
 				2025081D18FE9D3D0094701E /* Main.storyboard */,
+				2025084018FE9D940094701E /* favListMasterViewController.h */,
+				2025084118FE9D940094701E /* favListMasterViewController.m */,
+				2025084418FE9DAD0094701E /* favListDetailViewController.h */,
+				2025084518FE9DAD0094701E /* favListDetailViewController.m */,
 				2025082018FE9D3D0094701E /* favListViewController.h */,
 				2025082118FE9D3D0094701E /* favListViewController.m */,
 				2025082318FE9D3D0094701E /* Images.xcassets */,
@@ -250,8 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2025084218FE9D940094701E /* favListMasterViewController.m in Sources */,
 				2025081C18FE9D3D0094701E /* favListAppDelegate.m in Sources */,
 				2025082218FE9D3D0094701E /* favListViewController.m in Sources */,
+				2025084618FE9DAD0094701E /* favListDetailViewController.m in Sources */,
 				2025081818FE9D3D0094701E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,7 +274,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2025084318FE9D940094701E /* favListMasterViewController.m in Sources */,
 				2025083718FE9D3D0094701E /* FavouritesTests.m in Sources */,
+				2025084718FE9DAD0094701E /* favListDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

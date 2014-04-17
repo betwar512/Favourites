@@ -29,6 +29,12 @@
 //plus button for going to detailViewController
 
 - (IBAction)addButton:(id)sender {
+
+        //sign my delegate to my protocol methood
+    
+    [self.delegate getMyUrlTextFormePlz:self];
+
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 //plus button for going to masterViewController
@@ -54,6 +60,10 @@
 //load to web view
     
     [self.myWeb loadRequest:request];
+
+
+    
+
 
     return YES;
 }

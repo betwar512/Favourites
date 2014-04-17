@@ -28,6 +28,7 @@
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="wio-r5-SqM">
                             <connections>
+                                <action selector="addButton:" destination="vXZ-lx-hvc" id="mqV-po-Tea"/>
                                 <segue destination="wr2-lP-pwU" kind="push" id="pST-IB-l1n"/>
                             </connections>
                         </barButtonItem>
@@ -36,9 +37,13 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="vXZ-lx-hvc" id="mDt-LF-aX4"/>
+                            </connections>
                         </textField>
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="FiZ-Zh-Hpk">
                             <connections>
+                                <action selector="favButton:" destination="vXZ-lx-hvc" id="nJU-IV-SUS"/>
                                 <segue destination="Xk4-Df-Zid" kind="push" id="v76-c5-EeG"/>
                             </connections>
                         </barButtonItem>

@@ -12,6 +12,8 @@
 
   //abs class to create object with it latter
 
+//class properties ass name urlAddress and imageURL
+
 @property NSString * name;
 
 @property NSString * urlAddress;

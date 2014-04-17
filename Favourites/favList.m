@@ -10,6 +10,7 @@
 
 @implementation favList
 
+//archiver method
 
 -(void) encodeWithCoder:(NSCoder*)encoder{
 
@@ -18,6 +19,9 @@
         [encoder encodeObject:self.urlAddress forKey:@"urlAddress"];
         [encoder encodeObject:self.imageUrl forKey:@"imageUrl"];
 }
+
+//UnArchiver method
+
 -initWithCoder:(NSCoder*)decoder{
     
     if (!(self=[super init]))return nil;

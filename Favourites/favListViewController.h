@@ -7,9 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+@class favListViewController;
 
-@interface favListViewController : UIViewController
+@protocol favListViewControllerDelegate <NSObject>
+
+@end
+@interface favListViewController : UIViewController<UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UIWebView *myWeb;
+
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
+
+@property id <favListViewControllerDelegate> delegate;
 
 @end

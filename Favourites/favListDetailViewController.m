@@ -17,12 +17,6 @@
 
 
 
--(void) getMyUrlTextFormePlz{
-   
-    [self dismissViewControllerAnimated:YES completion:nil];
-    self.webAddress.text=self.textFromF;
-
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +32,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
     self.webAddress.text=self.textFromF;
 }
 
@@ -47,17 +42,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+/*
+    favList*myItems=[[favList alloc]init];
+    myItems.name=self.nameFav.text;
+    myItems.urlAddress=self.webAddress.text;
+    myItems.imageUrl=self.imageUrl.text;
+ 
+  */
+    [self.delegate favListDetailViewControllerDisspears:self];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    return YES;
+
+}
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-/*- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+/*
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 
     // Get the new view controller using [segue destinationViewController].
-    favListViewController* flvc = segue.destinationViewController;
     // Pass the selected object to the new view controller.
-     flvc.delegate = self;
     
  
 }

@@ -14,6 +14,23 @@
 
 @implementation favListMasterViewController
 
+
+
+-(void) favListDetailViewControllerDisspears:(favListDetailViewController *)favListDetailViewController{
+
+    favList *myItems=[[favList alloc]init];
+    myItems.name=favListDetailViewController.nameFav.text;
+    myItems.urlAddress=favListDetailViewController.webAddress.text;
+    myItems.imageUrl=favListDetailViewController.imageUrl.text;
+    [self.myArray addObject:myItems];
+
+         [self.tableView reloadData];
+}
+
+
+
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -26,6 +43,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    
     
         self.navigationItem.rightBarButtonItem=self.editButtonItem;
     // Uncomment the following line to preserve selection between presentations.
@@ -112,7 +131,8 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
+    favListDetailViewController*fldvc=[segue destinationViewController];
+    fldvc.delegate=self;
     // Pass the selected object to the new view controller.
 }
 

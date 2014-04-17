@@ -65,6 +65,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
+
+   //first segue for add button add identifier later
+    
     // Get the new view controller using [segue destinationViewController].
     favListDetailViewController* flvc = [segue destinationViewController];
     // Pass the selected object to the new view controller.

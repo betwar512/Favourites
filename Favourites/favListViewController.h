@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "favListDetailViewController.h"
 @class favListViewController;
 
 @protocol favListViewControllerDelegate <NSObject>
--(void) getMyUrlTextFormePlz:(favListViewController*)favListViewController;
 
 @end
 @interface favListViewController : UIViewController<UITextFieldDelegate>

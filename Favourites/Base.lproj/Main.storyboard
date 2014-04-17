@@ -28,8 +28,8 @@
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="wio-r5-SqM">
                             <connections>
-                                <action selector="addButton:" destination="vXZ-lx-hvc" id="mqV-po-Tea"/>
-                                <segue destination="wr2-lP-pwU" kind="push" id="pST-IB-l1n"/>
+                                <action selector="addButton:" destination="vXZ-lx-hvc" id="zEX-nI-NCo"/>
+                                <segue destination="wr2-lP-pwU" kind="push" id="GNF-kK-2QN"/>
                             </connections>
                         </barButtonItem>
                         <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="jov-Tl-u6G">
@@ -176,6 +176,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pST-IB-l1n"/>
+        <segue reference="GNF-kK-2QN"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -66,8 +66,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="hdY-Gp-BEA">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="hdY-Gp-BEA">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hdY-Gp-BEA" id="Cqf-s3-p34">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -106,18 +106,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wr2-lP-pwU" id="fGf-Er-n3R"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUW-jR-XrP">
                                 <rect key="frame" x="43" y="199" width="241" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wr2-lP-pwU" id="iWU-yw-Jxz"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MLw-YB-V24">
                                 <rect key="frame" x="42" y="329" width="241" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wr2-lP-pwU" id="i52-Zi-6Vr"/>
+                                </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Irg-DT-cvG">
                                 <rect key="frame" x="43" y="412" width="240" height="128"/>
@@ -139,7 +148,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QRe-HN-Pkh"/>
+                    <navigationItem key="navigationItem" id="QRe-HN-Pkh">
+                        <barButtonItem key="rightBarButtonItem" title="done" id="Euv-H6-gv0">
+                            <connections>
+                                <action selector="doneButton:" destination="wr2-lP-pwU" id="FWA-1I-ya4"/>
+                                <segue destination="Xk4-Df-Zid" kind="modal" identifier="doneEdite" id="KHq-w8-y8N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageUrl" destination="MLw-YB-V24" id="JBQ-g4-sKh"/>
                         <outlet property="myImageView" destination="Irg-DT-cvG" id="1cp-YA-2rI"/>
@@ -149,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EfE-V8-rAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2074" y="57"/>
+            <point key="canvasLocation" x="1558" y="349"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bmo-rG-cbn">
@@ -176,6 +192,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="GNF-kK-2QN"/>
+        <segue reference="KHq-w8-y8N"/>
+        <segue reference="Nnp-BW-PAQ"/>
     </inferredMetricsTieBreakers>
 </document>

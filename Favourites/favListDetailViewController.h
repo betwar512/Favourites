@@ -10,12 +10,11 @@
 #import "favListViewController.h"
 #import "favList.h"
 #import "favListMasterViewController.h"
-
 @class favListDetailViewController;
 
-@protocol favListDetailViewControllerDelegate <NSObject>;
+@protocol favListDetailViewControllerDelegate <NSObject>
 
--(void) favListDetailViewControllerDisspears:(favListDetailViewController *)favListDetailViewController;
+-(void)favListDetailViewControllerDisspears:(favListDetailViewController*)favListDetailViewController;
 
 @end
 

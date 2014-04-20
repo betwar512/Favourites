@@ -10,7 +10,8 @@
 #import "favListDetailViewController.h"
 #import "favList.h"
 
-@interface favListMasterViewController : UITableViewController<favListDetailViewControllerDelegate>
+@interface favListMasterViewController : UITableViewController;
+
 
 @property NSMutableArray *myArray;
 

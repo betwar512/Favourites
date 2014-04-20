@@ -52,21 +52,39 @@
   */
     [self.delegate favListDetailViewControllerDisspears:self];
         [self dismissViewControllerAnimated:YES completion:nil];
+    
+    
     return YES;
 
 }
+- (IBAction)doneButton:(id)sender {
+    
+  //  need it in your button action
+    
+    [self performSegueWithIdentifier:@"doneEdite" sender:sender];
+    
+}
 
-#pragma mark - Navigation
+
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-/*
+
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if([[segue identifier] isEqualToString:@"doneEdite"]){
+
+        // perform segue for tableViewController
+    
+    
+    }
 
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
+
+
+
  
 }
-*/
+
+
 @end

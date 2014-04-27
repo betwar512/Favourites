@@ -481,6 +481,7 @@
 				2025083C18FE9D3D0094701E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2025083D18FE9D3D0094701E /* Build configuration list for PBXNativeTarget "FavouritesTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +490,7 @@
 				2025083F18FE9D3D0094701E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

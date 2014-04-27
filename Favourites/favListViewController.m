@@ -10,7 +10,7 @@
 
 
 @interface favListViewController ()
-@property NSString*url;
+
 @end
 
 @implementation favListViewController

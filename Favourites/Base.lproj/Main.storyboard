@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="eI2-bK-ALl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="eI2-bK-ALl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -74,7 +74,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="wr2-lP-pwU" kind="push" id="Nnp-BW-PAQ"/>
+                                    <segue destination="wr2-lP-pwU" kind="push" identifier="cellPush" id="Nnp-BW-PAQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -152,7 +152,7 @@
                         <barButtonItem key="rightBarButtonItem" title="done" id="Euv-H6-gv0">
                             <connections>
                                 <action selector="doneButton:" destination="wr2-lP-pwU" id="FWA-1I-ya4"/>
-                                <segue destination="Xk4-Df-Zid" kind="modal" identifier="doneEdite" id="KHq-w8-y8N"/>
+                                <segue destination="Xk4-Df-Zid" kind="push" identifier="doneEdite" id="KHq-w8-y8N"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

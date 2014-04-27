@@ -11,6 +11,9 @@
 
 @interface FavouritesTests : XCTestCase
 @property NSMutableArray*myArray;
+
+
+
 @end
 
 @implementation FavouritesTests
@@ -91,6 +94,16 @@
     XCTAssertTrue(loadMyArray.count== 3, @"expected 3");
 
     
+}
+-(void)addObject{
+
+
+    FavouritesTests * myItem=[[FavouritesTests alloc]init];
+    
+    
+
+
+
 }
 
 @end

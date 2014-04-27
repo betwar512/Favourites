@@ -32,8 +32,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
+    if(self.textFromF){
     self.webAddress.text=self.textFromF;
+    
+    }else{
+    
+    self.nameFav.text=self.name;
+    self.webAddress.text=self.url;
+    self.imageUrl.text=self.img;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,22 +48,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
 /*
-    favList*myItems=[[favList alloc]init];
-    myItems.name=self.nameFav.text;
-    myItems.urlAddress=self.webAddress.text;
-    myItems.imageUrl=self.imageUrl.text;
- 
-  */
+-(void)viewWillDisappear:(BOOL)animated{
+    
     [self.delegate favListDetailViewControllerDisspears:self];
-        [self dismissViewControllerAnimated:YES completion:nil];
-    
-    
-    return YES;
-
+  
 }
+
+*/
 - (IBAction)doneButton:(id)sender {
     
   //  need it in your button action
@@ -64,26 +63,40 @@
     [self performSegueWithIdentifier:@"doneEdite" sender:sender];
     
 }
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+
+    return YES;
+}
 
 
+//method use for hide keyboard
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:(YES)];
+}
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([[segue identifier] isEqualToString:@"doneEdite"]){
-
+        favListMasterViewController *fmv=[segue destinationViewController];
         // perform segue for tableViewController
-    
+        fmv.name=self.nameFav.text;
+        fmv.url=self.webAddress.text;
+        fmv.img=self.imageUrl.text;
+        [fmv doItforme];
+
+        
+
+        
     
     }
-
     // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    // Pass the selected object to the new view controller
+}
 
+-(void)loadItForme{
 
-
- 
 }
 
 

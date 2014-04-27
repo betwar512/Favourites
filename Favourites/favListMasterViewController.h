@@ -7,12 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "favListDetailViewController.h"
 #import "favList.h"
 
-@interface favListMasterViewController : UITableViewController;
+#import "favListDetailViewController.h"
 
 
-@property NSMutableArray *myArray;
+@interface favListMasterViewController : UITableViewController//<FavListDetailViewControllerDelegate>
+
+
+@property NSString* name;
+@property NSString* url;
+@property NSString*img;
+
+-(void) doItforme;
+@property (strong,retain)NSMutableArray*myArray;
+
+@property NSInteger* count;
 
 @end

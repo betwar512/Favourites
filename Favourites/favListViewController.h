@@ -15,5 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 
+@property NSString*url;
 
 @end

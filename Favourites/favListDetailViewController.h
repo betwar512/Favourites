@@ -8,14 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "favListViewController.h"
-#import "favList.h"
 #import "favListMasterViewController.h"
+#import "favList.h"
+
+
 @class favListDetailViewController;
 
-@protocol favListDetailViewControllerDelegate <NSObject>
+@protocol FavListDetailViewControllerDelegate <NSObject>
+
+-(void)favListDetailViewReturn:(favListDetailViewController*)favListDetailViewController;
+
 
 -(void)favListDetailViewControllerDisspears:(favListDetailViewController*)favListDetailViewController;
-
 @end
 
 @interface favListDetailViewController : UIViewController<UITextFieldDelegate>
@@ -24,7 +28,14 @@
 @property (weak, nonatomic) IBOutlet UITextField *imageUrl;
 @property (weak, nonatomic) IBOutlet UIImageView *myImageView;
 @property NSString*textFromF;
-@property id<favListDetailViewControllerDelegate> delegate;
 
+
+@property NSString*name;
+@property NSString*url;
+@property NSString*img;
+
+@property id<FavListDetailViewControllerDelegate> delegate;
+
+-(void) loadItForme;
 
 @end

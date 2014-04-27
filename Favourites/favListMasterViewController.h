@@ -12,7 +12,14 @@
 #import "favListDetailViewController.h"
 
 
-@interface favListMasterViewController : UITableViewController//<FavListDetailViewControllerDelegate>
+
+@interface favListMasterViewController : UITableViewController
+
+
+
+
+
+
 
 
 @property NSString* name;
@@ -22,6 +29,6 @@
 -(void) doItforme;
 @property (strong,retain)NSMutableArray*myArray;
 
-@property NSInteger* count;
+
 
 @end

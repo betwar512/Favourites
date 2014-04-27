@@ -65,6 +65,12 @@
 }
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
 
+    [self.delegate favListDetailViewReturn:self];
+    
+
+    [self.delegate favListDetailViewWillDi:self];
+    
+
     return YES;
 }
 
@@ -85,19 +91,18 @@
         fmv.url=self.webAddress.text;
         fmv.img=self.imageUrl.text;
         [fmv doItforme];
-
         
-
         
     
+    
     }
+   
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller
 }
 
--(void)loadItForme{
 
-}
+
 
 
 @end

@@ -15,30 +15,28 @@
 
 @implementation favListMasterViewController
 
-/*
--(void)favListDetailViewReturn:(favListDetailViewController*)favListDetailViewController{
-
-
-    [self dismissViewControllerAnimated:YES completion:nil];
+-(void)favListDetailViewWillDi:(FavListDetailViewController*)FavListDetailViewController{
+    
+        [self dismissViewControllerAnimated:YES completion:nil];
 
 }
 
+-(void) favListDetailViewReturn:(favListDetailViewController *)FavListDetailViewController{
 
-
-
--(void) favListDetailViewControllerDisspears:(favListDetailViewController *)favListDetailViewController{
-
+    // create object from favList class
+    
     favList *myItems=[[favList alloc]init];
-    myItems.name=favListDetailViewController.nameFav.text;
-    myItems.urlAddress=favListDetailViewController.webAddress.text;
-    myItems.imageUrl=favListDetailViewController.imageUrl.text;
-    [self.myArray addObject:myItems];
+    myItems.name=FavListDetailViewController.nameFav.text;
+    myItems.urlAddress=FavListDetailViewController.webAddress.text;
+    myItems.imageUrl=FavListDetailViewController.imageUrl.text;
+    
+    //replace onject at the index it got selected
+    
+    [self.myArray replaceObjectAtIndex:[[self.tableView indexPathForSelectedRow]row] withObject:myItems];
 
          [self.tableView reloadData];
 }
 
-
-*/
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -57,7 +55,7 @@
 
         self.navigationItem.rightBarButtonItem=self.editButtonItem;
     // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+//     self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -114,12 +112,16 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        
+
+        //edit table cell and write it the file
         
                 [self.myArray removeObjectAtIndex:indexPath.row];
                     NSString*fileName=[self fileName];
+        
         [NSKeyedArchiver archiveRootObject:self.myArray toFile:fileName];
+        
         // Delete the row from the data source
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:
          UITableViewRowAnimationFade];
         
@@ -184,16 +186,31 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    //segue for cell to move the object to our detailViewController
+    
         if([[segue identifier] isEqualToString:@"cellPush"]){
+            
     favListDetailViewController * dvc=[segue destinationViewController];
+               //get file path
             NSString*fileName=[self fileName];
-           self.myArray=[[NSKeyedUnarchiver unarchiveObjectWithFile:fileName] mutableCopy];
-                  favList* myObject=[self.myArray objectAtIndex:[[self.tableView indexPathForSelectedRow]row]];
+
+            //create array from my file
+           
+            self.myArray=[[NSKeyedUnarchiver unarchiveObjectWithFile:fileName] mutableCopy];
+            
+            //get targeted object from table
+            
+            favList* myObject=[self.myArray objectAtIndex:[[self.tableView indexPathForSelectedRow]row]];
+            
+            //move strings to detailViewController
+            
             dvc.name=myObject.name;
             dvc.url=myObject.urlAddress;
             dvc.img=myObject.imageUrl;
+            
+            dvc.delegate=self;
+            
 
-    // Pass the selected object to the new view controller.
   }
 }
 

@@ -12,14 +12,14 @@
 #import "favList.h"
 
 
-@class favListDetailViewController;
+@class FavListDetailViewController;
 
-@protocol FavListDetailViewControllerDelegate <NSObject>
+@protocol FavListDetailViewControllerdelegate <NSObject>
 
--(void)favListDetailViewReturn:(favListDetailViewController*)favListDetailViewController;
+-(void)favListDetailViewReturn:(FavListDetailViewController*)FavListDetailViewController;
 
+-(void)favListDetailViewWillDi:(FavListDetailViewController*)FavListDetailViewController;
 
--(void)favListDetailViewControllerDisspears:(favListDetailViewController*)favListDetailViewController;
 @end
 
 @interface favListDetailViewController : UIViewController<UITextFieldDelegate>
@@ -34,8 +34,8 @@
 @property NSString*url;
 @property NSString*img;
 
-@property id<FavListDetailViewControllerDelegate> delegate;
+@property id<FavListDetailViewControllerdelegate> delegate;
 
--(void) loadItForme;
+
 
 @end

@@ -74,13 +74,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="wr2-lP-pwU" kind="push" identifier="cellPush" id="Nnp-BW-PAQ"/>
+                                    <segue destination="wr2-lP-pwU" kind="modal" identifier="cellPush" id="Nnp-BW-PAQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Xk4-Df-Zid" id="DAf-gQ-EbX"/>
-                            <outlet property="delegate" destination="Xk4-Df-Zid" id="JpN-VZ-b5M"/>
+                            <outlet property="delegate" destination="Xk4-Df-Zid" id="gRt-v3-s3Z"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Nw2-JL-zbZ"/>

@@ -74,10 +74,15 @@
     // Pass the selected object to the new view controller.
     flvc.textFromF=self.urlTextField.text;
     }
-    else{
+    
+    /* segue for bookmark bar button from webView page to our table
+     excute the methood loadTableview to open file write to Array and load table with file */
+        if([[segue identifier] isEqualToString:@"favTable"]){
     
         favListMasterViewController*fmv=[segue destinationViewController];
         [fmv loadTableForeview];
+            
+            
     }
     
 }

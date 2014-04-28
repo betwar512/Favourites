@@ -44,7 +44,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="FiZ-Zh-Hpk">
                             <connections>
                                 <action selector="favButton:" destination="vXZ-lx-hvc" id="nJU-IV-SUS"/>
-                                <segue destination="Xk4-Df-Zid" kind="push" id="v76-c5-EeG"/>
+                                <segue destination="Xk4-Df-Zid" kind="push" identifier="favTable" id="v76-c5-EeG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -15,6 +15,14 @@
 
 @implementation favListMasterViewController
 
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 
 -(void)loadTableForeview{
@@ -33,8 +41,9 @@
 
 }
 
--(void) favListDetailViewReturn:(favListDetailViewController *)FavListDetailViewController{
 
+-(void) favListDetailViewReturn:(favListDetailViewController *)FavListDetailViewController{
+    
     // create object from favList class
     
     favList *myItems=[[favList alloc]init];
@@ -45,22 +54,14 @@
     //replace onject at the index it got selected
     
     [self.myArray replaceObjectAtIndex:[[self.tableView indexPathForSelectedRow]row] withObject:myItems];
-                        NSString*fileName=[self fileName];
-            [NSKeyedArchiver archiveRootObject:self.myArray toFile:fileName];
-
-         [self.tableView reloadData];
+    
+    NSString*fileName=self.fileName;
+    
+    [NSKeyedArchiver archiveRootObject:self.myArray toFile:fileName];
+    
+    [self.tableView reloadData];
 }
 
-
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {

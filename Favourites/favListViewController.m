@@ -67,12 +67,18 @@
     
 
    //first segue for add button add identifier later
+    if([[segue identifier] isEqualToString:@"urlGetter"]){
     
     // Get the new view controller using [segue destinationViewController].
     favListDetailViewController* flvc = [segue destinationViewController];
     // Pass the selected object to the new view controller.
     flvc.textFromF=self.urlTextField.text;
+    }
+    else{
     
+        favListMasterViewController*fmv=[segue destinationViewController];
+        [fmv loadTableForeview];
+    }
     
 }
 

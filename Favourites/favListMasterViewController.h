@@ -27,6 +27,7 @@
 @property NSString*img;
 
 -(void) doItforme;
+-(void)loadTableForeview;
 @property (strong,retain)NSMutableArray*myArray;
 
 

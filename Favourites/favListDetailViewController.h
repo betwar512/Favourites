@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *myImageView;
 @property NSString*textFromF;
 
+//geting from favLisMasterView
 
 @property NSString*name;
 @property NSString*url;

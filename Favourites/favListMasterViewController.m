@@ -9,11 +9,23 @@
 #import "favListMasterViewController.h"
 #import "favListDetailViewController.h"
 
-@interface favListMasterViewController ()
+@interface favListMasterViewController ()<FavListDetailViewControllerdelegate>
 
 @end
 
 @implementation favListMasterViewController
+
+
+
+-(void)loadTableForeview{
+
+  NSString*fileName=[self fileName];
+
+ self.myArray=[[NSKeyedUnarchiver unarchiveObjectWithFile:fileName] mutableCopy];
+    
+
+}
+
 
 -(void)favListDetailViewWillDi:(FavListDetailViewController*)FavListDetailViewController{
     
@@ -33,6 +45,8 @@
     //replace onject at the index it got selected
     
     [self.myArray replaceObjectAtIndex:[[self.tableView indexPathForSelectedRow]row] withObject:myItems];
+                        NSString*fileName=[self fileName];
+            [NSKeyedArchiver archiveRootObject:self.myArray toFile:fileName];
 
          [self.tableView reloadData];
 }

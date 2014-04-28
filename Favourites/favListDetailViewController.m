@@ -40,6 +40,11 @@
     self.nameFav.text=self.name;
     self.webAddress.text=self.url;
     self.imageUrl.text=self.img;
+        
+        NSURL * imageURL = [NSURL URLWithString:self.img];
+        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+        UIImage * myImage = [UIImage imageWithData:imageData];
+        self.myImageView.image=myImage;
     }
 }
 
@@ -65,9 +70,9 @@
 }
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
 
+    
     [self.delegate favListDetailViewReturn:self];
     
-
     [self.delegate favListDetailViewWillDi:self];
     
 

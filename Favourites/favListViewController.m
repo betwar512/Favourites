@@ -19,12 +19,36 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
+    NSString*urlInCom=[NSString stringWithFormat:@"https://%@",self.url];
+    
+    NSString*urlAdress=urlInCom;
+    
+    NSURL *url=[NSURL URLWithString:urlAdress];
+    
+    NSURLRequest*request=[NSURLRequest requestWithURL:url];
+    //load to web view
+    
+    [self.myWeb loadRequest:request];
+
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dissmissMasterview:(favListMasterViewController*)favListMasterViewController{
+
+
+           [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 //plus button for going to detailViewController

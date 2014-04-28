@@ -62,7 +62,6 @@
     [self.tableView reloadData];
 }
 
-
 - (void)viewDidLoad
 {
 
@@ -106,8 +105,24 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
+    NSString* imageUrl=[[self.myArray objectAtIndex:indexPath.row]imageUrl];
+    NSURL * imageURL = [NSURL URLWithString:imageUrl];
+    NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+    UIImage * myImage = [UIImage imageWithData:imageData];
+
+//    [cell.imageView setImage:myImage];
+    cell.imageView.image=myImage;
+    
+    
+    
+    
+    
+    
+    
+    
     // Configure the cell...
     cell.textLabel.text=[[self.myArray objectAtIndex:indexPath.row]name];
+    cell.detailTextLabel.text=[[self.myArray objectAtIndex:indexPath.row]urlAddress];
     
     return cell;
 }
@@ -162,6 +177,14 @@
     return YES;
 }
 */
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"detail" sender:self];
+
+
+
+}
+
+
 -(NSString*)fileName
 {
     NSString * documentDirectory=NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask,YES).firstObject;
@@ -227,6 +250,16 @@
             
 
   }
+    
+    if([[segue identifier] isEqualToString:@"detail"]){
+        favListViewController* fvc=[segue destinationViewController];
+        
+     fvc.url=[[self.myArray objectAtIndex:[[self.tableView indexPathForSelectedRow ]row]]urlAddress];
+        
+
+    
+    
+    }
 }
 
 

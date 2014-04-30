@@ -57,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1516" y="321"/>
+            <point key="canvasLocation" x="660" y="305"/>
         </scene>
         <!--Fav List Master View Controller-->
         <scene sceneID="eyP-UV-JGr">
@@ -68,11 +68,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="sog-3w-gYc" detailTextLabel="fhA-S7-4ra" rowHeight="62" style="IBUITableViewCellStyleSubtitle" id="hdY-Gp-BEA" colorLabel="IBBuiltInLabel-Purple">
-                                <rect key="frame" x="0.0" y="22" width="320" height="62"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="sog-3w-gYc" detailTextLabel="fhA-S7-4ra" rowHeight="62" style="IBUITableViewCellStyleSubtitle" id="hdY-Gp-BEA" colorLabel="IBBuiltInLabel-Purple">
+                                <rect key="frame" x="0.0" y="86" width="320" height="62"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hdY-Gp-BEA" id="Cqf-s3-p34">
-                                    <rect key="frame" x="0.0" y="0.0" width="253" height="61"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="61"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sog-3w-gYc">
@@ -93,7 +93,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="wr2-lP-pwU" kind="modal" identifier="cellPush" id="VOQ-Jz-46F"/>
-                                    <segue destination="vXZ-lx-hvc" kind="push" identifier="detail" trigger="accessoryAction" id="jqH-U3-my1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -108,7 +107,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1qB-uX-Iyu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1532" y="-1444"/>
+            <point key="canvasLocation" x="1484" y="996"/>
         </scene>
         <!--Fav List Detail View Controller-->
         <scene sceneID="Bec-2Y-JXJ">
@@ -186,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EfE-V8-rAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="386" y="-732"/>
+            <point key="canvasLocation" x="1484" y="-228"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bmo-rG-cbn">
@@ -213,8 +212,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jqH-U3-my1"/>
-        <segue reference="KHq-w8-y8N"/>
-        <segue reference="VOQ-Jz-46F"/>
+        <segue reference="GNF-kK-2QN"/>
+        <segue reference="v76-c5-EeG"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -5,13 +5,6 @@
 //  Created by Abbi H Safaie on 16/04/2014.
 //  Copyright (c) 2014 Abbas H Safaie. All rights reserved.
 //
-
-#import <UIKit/UIKit.h>
-#import "favListViewController.h"
-#import "favListMasterViewController.h"
-#import "favList.h"
-
-
 @class favListDetailViewController;
 
 @protocol favListDetailViewControllerdelegate <NSObject>
@@ -21,6 +14,14 @@
 -(void)favListDetailViewWillDi:(favListDetailViewController*)favListDetailViewController;
 
 @end
+
+#import <UIKit/UIKit.h>
+#import "favListViewController.h"
+#import "favListMasterViewController.h"
+#import "favList.h"
+
+
+
 
 @interface favListDetailViewController : UIViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameFav;

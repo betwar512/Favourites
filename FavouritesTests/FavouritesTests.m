@@ -95,15 +95,6 @@
 
     
 }
--(void)addObject{
 
-
-    FavouritesTests * myItem=[[FavouritesTests alloc]init];
-    
-    
-
-
-
-}
 
 @end

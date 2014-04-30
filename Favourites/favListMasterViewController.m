@@ -5,15 +5,19 @@
 //  Created by Abbi H Safaie on 16/04/2014.
 //  Copyright (c) 2014 Abbas H Safaie. All rights reserved.
 //
-
 #import "favListMasterViewController.h"
-#import "favListDetailViewController.h"
 
-@interface favListMasterViewController ()<favListDetailViewControllerdelegate>
+@interface favListMasterViewController ()
 
 @end
 
+
+#import "favListDetailViewController.h"
+
+
+
 @implementation favListMasterViewController
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -45,14 +49,12 @@
 -(void) favListDetailViewReturn:(favListDetailViewController *)favListDetailViewController{
     
     // create object from favList class
-    
     favList *myItems=[[favList alloc]init];
     myItems.name=favListDetailViewController.nameFav.text;
     myItems.urlAddress=favListDetailViewController.webAddress.text;
     myItems.imageUrl=favListDetailViewController.imageUrl.text;
     
-    //replace onject at the index it got selected
-    
+    //replace onject at the index it got select
     [self.myArray replaceObjectAtIndex:[[self.tableView indexPathForSelectedRow]row] withObject:myItems];
     
     NSString*fileName=self.fileName;
@@ -104,6 +106,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    // image
     
     NSString* imageUrl=[[self.myArray objectAtIndex:indexPath.row]imageUrl];
     NSURL * imageURL = [NSURL URLWithString:imageUrl];
@@ -187,6 +191,7 @@
     return fileName;
     
 }
+// method called after don in favListDetailViewController
 
 -(void)doItforme{
    
@@ -202,7 +207,7 @@
     
 
     //for not add mepty cell
-    if((self.name.length!=0)&& (self.url.length!=0)&&(self.img.length!=0)){
+    if((self.name.length!=0)||(self.url.length!=0)){
         
         
     favList * myItem=[[favList alloc]init];
@@ -222,9 +227,9 @@
 
 }
 
-#pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     //segue for cell to move the object to our detailViewController
@@ -253,18 +258,10 @@
             
 
   }
-    
-    if([[segue identifier] isEqualToString:@"detail"]){
-        
-        favListViewController* fvc=[segue destinationViewController];
-        
-     fvc.url=[[self.myArray objectAtIndex:[[self.tableView indexPathForSelectedRow ]row]]urlAddress];
-
         /*
-      //getting rid if navController but no backbutton yet
+      getting rid if navController but no backbutton yet
         [self.navigationController setNavigationBarHidden:YES animated:YES];
 */
-    }
 }
 
 

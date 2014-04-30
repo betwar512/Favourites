@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "favList.h"
-
-#import "favListDetailViewController.h"
 #import "favListViewController.h"
+#import "favListDetailViewController.h"
 
 
-@interface favListMasterViewController : UITableViewController
+
+@interface favListMasterViewController : UITableViewController<favListDetailViewControllerdelegate>
+
 
 
 
@@ -21,6 +22,7 @@
 @property NSString* url;
 @property NSString*img;
 
+//@property NSString* mine;
 
 @property (strong,retain)NSMutableArray*myArray;
 

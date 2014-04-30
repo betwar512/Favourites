@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "favListDetailViewController.h"
-#import "favListMasterViewController.h"
 
 @interface favListViewController : UIViewController<UITextFieldDelegate>
 
@@ -17,7 +16,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 
 @property NSString*url;
-
-
 
 @end

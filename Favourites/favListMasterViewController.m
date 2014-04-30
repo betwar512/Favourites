@@ -9,7 +9,7 @@
 #import "favListMasterViewController.h"
 #import "favListDetailViewController.h"
 
-@interface favListMasterViewController ()<FavListDetailViewControllerdelegate>
+@interface favListMasterViewController ()<favListDetailViewControllerdelegate>
 
 @end
 
@@ -35,21 +35,21 @@
 }
 
 
--(void)favListDetailViewWillDi:(FavListDetailViewController*)FavListDetailViewController{
+-(void)favListDetailViewWillDi:(favListDetailViewController*)favListDetailViewController{
     
         [self dismissViewControllerAnimated:YES completion:nil];
 
 }
 
 
--(void) favListDetailViewReturn:(favListDetailViewController *)FavListDetailViewController{
+-(void) favListDetailViewReturn:(favListDetailViewController *)favListDetailViewController{
     
     // create object from favList class
     
     favList *myItems=[[favList alloc]init];
-    myItems.name=FavListDetailViewController.nameFav.text;
-    myItems.urlAddress=FavListDetailViewController.webAddress.text;
-    myItems.imageUrl=FavListDetailViewController.imageUrl.text;
+    myItems.name=favListDetailViewController.nameFav.text;
+    myItems.urlAddress=favListDetailViewController.webAddress.text;
+    myItems.imageUrl=favListDetailViewController.imageUrl.text;
     
     //replace onject at the index it got selected
     
@@ -69,7 +69,7 @@
 
         self.navigationItem.rightBarButtonItem=self.editButtonItem;
     // Uncomment the following line to preserve selection between presentations.
-//     self.clearsSelectionOnViewWillAppear = NO;
+    //     self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -112,13 +112,6 @@
 
 //    [cell.imageView setImage:myImage];
     cell.imageView.image=myImage;
-    
-    
-    
-    
-    
-    
-    
     
     // Configure the cell...
     cell.textLabel.text=[[self.myArray objectAtIndex:indexPath.row]name];
@@ -196,23 +189,33 @@
 }
 
 -(void)doItforme{
-
-    favList * myItem=[[favList alloc]init];
-    myItem.name=self.name;
-    myItem.urlAddress=self.url;
-    myItem.imageUrl=self.img;
+   
     
-        NSString*fileName=[self fileName];
-
+            NSString*fileName=[self fileName];
+    
     if(fileName){
         
         self.myArray=[[NSKeyedUnarchiver unarchiveObjectWithFile:fileName] mutableCopy];
     }else{
         self.myArray=[[NSMutableArray alloc]init];
     }
+    
+
+    //for not add mepty cell
+    if((self.name.length!=0)&& (self.url.length!=0)&&(self.img.length!=0)){
+        
+        
+    favList * myItem=[[favList alloc]init];
+    myItem.name=self.name;
+    myItem.urlAddress=self.url;
+    myItem.imageUrl=self.img;
+            [self.myArray addObject:myItem];
+   
+    }
 
 
-    [self.myArray addObject:myItem];
+   
+
  [NSKeyedArchiver archiveRootObject:self.myArray toFile:fileName];
 
 
@@ -252,13 +255,15 @@
   }
     
     if([[segue identifier] isEqualToString:@"detail"]){
+        
         favListViewController* fvc=[segue destinationViewController];
         
      fvc.url=[[self.myArray objectAtIndex:[[self.tableView indexPathForSelectedRow ]row]]urlAddress];
-        
 
-    
-    
+        /*
+      //getting rid if navController but no backbutton yet
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+*/
     }
 }
 

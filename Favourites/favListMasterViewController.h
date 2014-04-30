@@ -12,29 +12,23 @@
 #import "favListDetailViewController.h"
 #import "favListViewController.h"
 
-@class favListMasterViewController;
-@protocol favlistMasterViewControllerDelegate <NSObject>
-
--(void)dissmissMasterview:(favListMasterViewController*)favListMasterViewController;
-
-@end
 
 @interface favListMasterViewController : UITableViewController
 
 
 
-
-
-
-@property id <favlistMasterViewControllerDelegate> delegate;
-
 @property NSString* name;
 @property NSString* url;
 @property NSString*img;
 
--(void) doItforme;
--(void)loadTableForeview;
+
 @property (strong,retain)NSMutableArray*myArray;
+
+-(void) doItforme;
+
+-(void)loadTableForeview;
+
+
 
 
 

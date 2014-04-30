@@ -74,14 +74,16 @@
     [self.delegate favListDetailViewReturn:self];
     
     [self.delegate favListDetailViewWillDi:self];
-    
+
 
     return YES;
 }
 
 
-//method use for hide keyboard
+//hide keyboard
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
     [self.view endEditing:(YES)];
 }
 
@@ -91,19 +93,16 @@
 {
     if([[segue identifier] isEqualToString:@"doneEdite"]){
         favListMasterViewController *fmv=[segue destinationViewController];
-        // perform segue for tableViewController
+
+        
         fmv.name=self.nameFav.text;
         fmv.url=self.webAddress.text;
         fmv.img=self.imageUrl.text;
         [fmv doItforme];
         
         
-    
-    
+
     }
-   
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller
 }
 
 

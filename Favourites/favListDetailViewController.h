@@ -12,13 +12,13 @@
 #import "favList.h"
 
 
-@class FavListDetailViewController;
+@class favListDetailViewController;
 
-@protocol FavListDetailViewControllerdelegate <NSObject>
+@protocol favListDetailViewControllerdelegate <NSObject>
 
--(void)favListDetailViewReturn:(FavListDetailViewController*)FavListDetailViewController;
+-(void)favListDetailViewReturn:(favListDetailViewController*)favListDetailViewController;
 
--(void)favListDetailViewWillDi:(FavListDetailViewController*)FavListDetailViewController;
+-(void)favListDetailViewWillDi:(favListDetailViewController*)favListDetailViewController;
 
 @end
 
@@ -35,7 +35,7 @@
 @property NSString*url;
 @property NSString*img;
 
-@property id<FavListDetailViewControllerdelegate> delegate;
+@property id<favListDetailViewControllerdelegate> delegate;
 
 
 

@@ -44,12 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)dissmissMasterview:(favListMasterViewController*)favListMasterViewController{
 
-
-           [self dismissViewControllerAnimated:YES completion:nil];
-
-}
 
 //plus button for going to detailViewController
 
@@ -65,7 +60,7 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     
     self.url=self.urlTextField.text;
-    
+
 //set url entry
     
     NSString*urlInCom=[NSString stringWithFormat:@"https://%@",self.url];

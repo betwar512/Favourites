@@ -22,7 +22,7 @@
 @property NSString* url;
 @property NSString*img;
 
-//@property NSString* mine;
+//myArray property 
 
 @property (strong,retain)NSMutableArray*myArray;
 

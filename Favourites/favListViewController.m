@@ -45,17 +45,24 @@
     self.url=self.urlTextField.text;
 
 //set url entry
+    dispatch_queue_t background= dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0);
     
-    NSString*urlInCom=[NSString stringWithFormat:@"https://%@",self.url];
+    //set our url entry from textField as string to create NSURL
     
-    NSString*urlAdress=urlInCom;
+    NSString*urlAdress=[NSString stringWithFormat:@"https://%@",self.url];
+    
+  //  NSString*urlAdress=urlInCom;
     
     NSURL *url=[NSURL URLWithString:urlAdress];
+    dispatch_async(background,^{
+
 
     NSURLRequest*request=[NSURLRequest requestWithURL:url];
 //load to web view
-    
+  dispatch_sync(dispatch_get_main_queue(), ^{
     [self.myWeb loadRequest:request];
+  });
+    });
     return YES;
 }
 

@@ -24,10 +24,15 @@
 
 
 @interface favListDetailViewController : UIViewController<UITextFieldDelegate>
+
+//textFields and image properties
+
 @property (weak, nonatomic) IBOutlet UITextField *nameFav;
 @property (weak, nonatomic) IBOutlet UITextField *webAddress;
 @property (weak, nonatomic) IBOutlet UITextField *imageUrl;
 @property (weak, nonatomic) IBOutlet UIImageView *myImageView;
+
+///String for passing viewController textField.text to detailView
 @property NSString*textFromF;
 
 //geting from favLisMasterView

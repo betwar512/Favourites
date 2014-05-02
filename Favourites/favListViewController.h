@@ -11,6 +11,7 @@
 
 @interface favListViewController : UIViewController<UITextFieldDelegate>
 
+//webView property
 @property (weak, nonatomic) IBOutlet UIWebView *myWeb;
 
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;

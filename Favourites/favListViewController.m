@@ -82,7 +82,10 @@
         if([[segue identifier] isEqualToString:@"favTable"]){
     
         favListMasterViewController*fmv=[segue destinationViewController];
-        [fmv loadTableForeview];
+
+            //run method in masterViewController
+            
+                [fmv loadTableForeview];
             
             
     }

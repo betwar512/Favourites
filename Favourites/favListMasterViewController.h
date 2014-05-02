@@ -17,7 +17,7 @@
 
 
 
-
+// all properties to sign fro passing into table
 @property NSString* name;
 @property NSString* url;
 @property NSString*img;
@@ -26,8 +26,12 @@
 
 @property (strong,retain)NSMutableArray*myArray;
 
+//method for getting our peoperty from Detailview
+
 -(void) doItforme;
 
+
+//load table and create Array
 -(void)loadTableForeview;
 
 

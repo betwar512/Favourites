@@ -30,17 +30,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    
+    //set text for DetalView from viewController
     
     if(self.textFromF){
     self.webAddress.text=self.textFromF;
     
     }else{
-    
+    //sign textField to our string passed to detailViewController form master
     self.nameFav.text=self.name;
     self.webAddress.text=self.url;
     self.imageUrl.text=self.img;
         
+        //bet image url
         NSURL * imageURL = [NSURL URLWithString:self.img];
         NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
         UIImage * myImage = [UIImage imageWithData:imageData];
@@ -70,6 +73,7 @@
 }
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
 
+    //call protocol
     
     [self.delegate favListDetailViewReturn:self];
     

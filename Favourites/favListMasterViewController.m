@@ -28,6 +28,7 @@
     return self;
 }
 
+//called by detail view Controller
 
 -(void)loadTableForeview{
 
@@ -45,6 +46,7 @@
 
 }
 
+//in protocol,detailView
 
 -(void) favListDetailViewReturn:(favListDetailViewController *)favListDetailViewController{
     
@@ -107,7 +109,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    // image
+    // image for cell
     
     NSString* imageUrl=[[self.myArray objectAtIndex:indexPath.row]imageUrl];
     NSURL * imageURL = [NSURL URLWithString:imageUrl];
